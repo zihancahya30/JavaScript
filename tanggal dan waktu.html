@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Real-Time Clock</title>
+    </head>
+    <body>
+        <h1>Jam Real-Time</h1>
+        <p id="jam"></p>
+        <script>
+            // Fungsi untuk memperbarui jam
+            function perbaruiJam() {
+                const sekarang = new Date();
+                const jam = sekarang.getHours();
+                const menit = sekarang.getMinutes();
+                const detik = sekarang.getSeconds();
+
+                // Format waktu
+                const waktuTerformat = `${sekarang}:${jam}:${menit}:${detik}`;
+
+                // Tampilkan waktu di elemen "jam"
+                document.getElementById("jam").textContent = waktuTerformat;
+            }
+
+            // Perbarui jam setiap detik
+            setInterval(perbaruiJam, 1000);
+        </script>
+    </body>
+</html>

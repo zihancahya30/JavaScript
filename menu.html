@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Menu dengan jQuery</title>
+    <style>
+        /* Gaya dasar untuk menu */
+        ul.menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333; /* Warna latar belakang */
+            text-align: center;
+        }
+
+        ul.menu li {
+            display: inline-block;
+            margin-right: 20px; /* Jarak antar menu */
+        }
+
+        ul.menu li a {
+            text-decoration: none;
+            color: #fff; /* Warna teks */
+            font-weight: bold;
+            padding: 10px 20px; /* Padding pada setiap menu */
+            transition: all 0.3s ease; /* Animasi saat hover */
+            border-radius: 5px; /* Sudut melengkung */
+        }
+
+        /* Efek hover pada menu */
+        ul.menu li a:hover {
+            background-color: #555; /* Warna latar belakang saat hover */
+        }
+
+        /* Efek aktif pada menu yang diklik */
+        ul.menu li a.active {
+            background-color: #ffa200; /* Warna latar belakang saat aktif */
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // Tambahkan kelas aktif pada menu yang diklik
+        $("ul.menu li a").click(function() {
+            $("ul.menu li a").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Pemanfaatan jQuery Sederhana</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        #toggleButton {
+            background: none;
+            border: none;
+            color: #66686a; /* Warna teks */
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 15px;
+        }
+
+        /* Gaya saat tombol dihover */
+        #toggleButton:hover {
+            color: #0056b3; /* Warna teks saat hover */
+        }
+    </style>
+
+</head>
+<body>
+    <button id="toggleButton">Tampilkan paragraf</button>
+    <p class="my-paragraph">AJAX (Asynchronous JavaScript and XML) adalah teknik yang memungkinkan pertukaran data antara server dan halaman web secara asinkron, tanpa harus memuat ulang seluruh halaman. Dengan AJAX, kita dapat memperbarui bagian-bagian tertentu dari halaman tanpa mengganggu pengalaman pengguna. <br><br>
+
+    jQuery adalah pustaka JavaScript yang menyediakan metode dan fungsi bantu untuk memanipulasi elemen HTML dan berinteraksi dengan server. Ada beberapa kebelihan jQuery yaitu menggunakan selektor gaya CSS untuk memilih elemen HTML, menyediakan metode bawaan untuk manipulasi, animasi, dan komunikasi dengan server, mengurangi jumlah kode JavaScript yang harus ditulis. <br>
+    Cara Menggunakan jQuery: <br>
+    1. Unduh jQuery dari situs resmi dan sertakan di HTML kita. <br>
+    2. Atau gunakan CDN (Content Delivery Network) untuk menghubungkan ke jQuery.</p>
+    <script>
+        $(document).ready(function(){
+            // Efek fade in saat halaman dimuat
+            $(".my-paragraph").fadeIn(1000);
+    
+            // Mengubah warna teks paragraf saat di-klik
+            $(".my-paragraph").click(function(){
+                $(this).css("color", "red");
+            });
+    
+            // Sembunyikan paragraf saat halaman dimuat
+            $(".my-paragraph").hide();
+    
+            // Tombol toggle
+            $("#toggleButton").click(function(){
+                var buttonText = $(this).text();
+                if(buttonText === "Tampilkan paragraf") {
+                    $(".my-paragraph").slideDown();
+                    $(this).text("Sembunyikan paragraf");
+                } else {
+                    $(".my-paragraph").slideUp();
+                    $(this).text("Tampilkan paragraf");
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
